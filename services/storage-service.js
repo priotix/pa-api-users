@@ -24,7 +24,7 @@ service.createNewUser = async function createNewUser(id) {
   console.log('Creating a new user on auth server');
 
   const options = {
-    url: `${config.get('paApiStorage.host')}/api/users`,
+    url: `${config.get('apiStorage.host')}/api/users`,
     json: true,
     method: 'POST',
     body: { userId: id },
