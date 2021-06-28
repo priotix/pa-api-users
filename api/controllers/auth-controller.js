@@ -18,9 +18,10 @@ controller.register = async (ctx) => {
     throw new ResourceExistsError(`E-mail ${reqData.email} already exists`, 'email');
   }
 
-  await authService.registerUser(reqData.email, reqData.password);
   const user = await UserModel.createUser(reqData);
+  await authService.registerUser(reqData.email, reqData.password, user._id);
   await storageService.createNewUser(user._id);
+  // TODO remove on failoure
 
   console.log(`User created ${user.email}`);
 

@@ -20,14 +20,14 @@ function storageErrorHandler(reason) {
   throw new StorageFailedError('Error on auth server', reason.statusCode);
 }
 
-service.createNewUser = async function createNewUser(id) {
+service.createNewUser = async function createNewUser(userId) {
   console.log('Creating a new user on auth server');
 
   const options = {
     url: `${config.get('apiStorage.host')}/api/users`,
     json: true,
     method: 'POST',
-    body: { userId: id },
+    body: { userId },
     headers: {
       Authorization: config.get('apiStorage.authKey'),
     },

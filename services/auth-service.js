@@ -42,7 +42,7 @@ service.validateToken = async function validateToken(token) {
   });
 };
 
-service.registerUser = async function registerUser(email, password) {
+service.registerUser = async function registerUser(email, password, userId) {
   console.log('Creating a new user on auth server');
 
   const options = {
@@ -52,6 +52,7 @@ service.registerUser = async function registerUser(email, password) {
     body: {
       email,
       password,
+      userId,
     },
   };
 
