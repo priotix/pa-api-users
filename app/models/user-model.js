@@ -36,7 +36,6 @@ UserSchema.set('toJSON', {
   },
 });
 
-
 // package user model
 let UserModel;
 

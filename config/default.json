@@ -2,7 +2,7 @@
   "db": {
     "user": "api"
   },
-  "port": 3102,
+  "port": 3101,
   "auth": {
     "passwordRegExp": "^.{8,72}$",
     "nameRegExp": "^\\S*$"

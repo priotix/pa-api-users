@@ -4,7 +4,6 @@ const AuthFailedError = require('../libs/errors/services/auth-service-failure-er
 const MultiValidationError = require('../libs/errors/validation/multi-validate-error');
 const ForbiddenError = require('../libs/errors/forbidden-error');
 
-
 const service = {};
 
 function authErrorHandler(reason) {
@@ -25,7 +24,7 @@ function authErrorHandler(reason) {
   throw new AuthFailedError('Error on auth server', reason.statusCode);
 }
 
-service.validateToken = async function validateToken(token, audience) {
+service.validateToken = async function validateToken(token) {
   console.log('Validating access token');
 
   const options = {
@@ -33,9 +32,6 @@ service.validateToken = async function validateToken(token, audience) {
     json: true,
     headers: {
       Authorization: token,
-    },
-    qs: {
-      audience,
     },
     method: 'GET',
   };

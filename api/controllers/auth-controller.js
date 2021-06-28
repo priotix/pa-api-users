@@ -1,6 +1,7 @@
 const { UserModel } = require('../../app/models/user-model');
 
 const authService = require('../../services/auth-service');
+const storageService = require('../../services/storage-service');
 
 const ResourceExistsError = require('../../libs/errors/validation/resource-exists-error');
 const AuthenticationError = require('../../libs/errors/auth/authentication-error');
@@ -19,6 +20,7 @@ controller.register = async (ctx) => {
 
   await authService.registerUser(reqData.email, reqData.password);
   const user = await UserModel.createUser(reqData);
+  await storageService.createNewUser(user._id);
 
   console.log(`User created ${user.email}`);
 

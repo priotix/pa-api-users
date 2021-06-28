@@ -6,5 +6,8 @@
   },
   "auth2Server": {
     "host": "API_AUTH_HOST"
+  },
+  "apiStorage": {
+    "host": "API_STORAGE_HOST"
   }
 }
