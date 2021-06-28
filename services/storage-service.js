@@ -28,6 +28,9 @@ service.createNewUser = async function createNewUser(id) {
     json: true,
     method: 'POST',
     body: { userId: id },
+    headers: {
+      Authorization: config.get('apiStorage.authKey'),
+    },
   };
 
   return request(options).catch((reason) => {

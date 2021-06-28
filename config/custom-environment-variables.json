@@ -8,6 +8,7 @@
     "host": "API_AUTH_HOST"
   },
   "apiStorage": {
-    "host": "API_STORAGE_HOST"
+    "host": "API_STORAGE_HOST",
+    "authKey": "API_STORAGE_AUTH_KEY"
   }
 }
