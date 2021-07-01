@@ -1,3 +1,5 @@
+# pa-api-users
+
 ## Setup Environment Variables
 
 ```
@@ -6,8 +8,8 @@ cp .env.dist .env
 
 in .env replace templates with real values
 
-```
-DB_ADMIN_PSWD={{db-admin-password}}
-DB_PSWD={{db-password}}
-```
+here is example of db env for local setup (with docker network)
 
+```
+DB_CONNECTION_STRING=mongodb://pa-users-db/api-users
+```
